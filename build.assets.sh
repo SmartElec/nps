@@ -26,7 +26,7 @@ CGO_ENABLED=0 GOOS=freebsd GOARCH=arm go build -ldflags "-s -w -extldflags -stat
 
 tar -czvf freebsd_arm_client.tar.gz npc conf/npc.conf conf/multi_account.conf
 
-CGO_ENABLED=0 GOOS=linux GOARCH=arm GOARM=7 go build -ldflags "-s -w -extldflags -static -extldflags -static" ./cmd/npc/npc.go
+CGO_ENABLED=0 GOOS=linux GOARCH=arm GOARM=7 GOMIPS=softfloat go build -ldflags "-s -w -extldflags -static -extldflags -static" ./cmd/npc/npc.go
 
 tar -czvf linux_arm_v7_client.tar.gz npc conf/npc.conf conf/multi_account.conf
 
