@@ -56,7 +56,7 @@ CGO_ENABLED=0 GOOS=linux GOARCH=mips64le go build -ldflags "-s -w -extldflags -s
 tar -czvf linux_mips64le_client.tar.gz npc conf/npc.conf conf/multi_account.conf
 
 
-CGO_ENABLED=0 GOOS=linux GOARCH=mipsle go build -ldflags "-s -w -extldflags -static -extldflags -static" ./cmd/npc/npc.go
+CGO_ENABLED=0 GOOS=linux GOARCH=mipsle GOMIPS=softfloat go build -ldflags "-s -w -extldflags -static -extldflags -static" ./cmd/npc/npc.go
 tar -czvf linux_mipsle_client.tar.gz npc conf/npc.conf conf/multi_account.conf
 
 
